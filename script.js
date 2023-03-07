@@ -1,6 +1,10 @@
+let userScore= 0;
+let computerScore = 0;
+
+
 const getUserChoice = (userInput) => {
     userInput = userInput.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
         return userInput
     } else {
         console.log('Error! Type rock, paper, or scissors.')
@@ -21,29 +25,31 @@ const getUserChoice = (userInput) => {
   
   const determineWinner = (userChoice, computerChoice) => {
     if (userChoice === computerChoice) {
-      return 'Tie!';
-      //display custom message for a TIE
-      // You both chose userChoice
+      return document.getElementById("p1").innerHTML = "You both equally suck!";
     }
     if (userChoice === 'rock') {
     if (computerChoice === 'paper') {
-      return "Computer Wins";
-       //increase PC Score Var
-      //say PC won in HTML
+      computerScore ++;
+      document.getElementById("computerScore").innerHTML = computerScore;
+      return document.getElementById("p1").innerHTML = "Wow, you're almost as bad as Mustafa!";
     } else {
-      return "You won!";
-      //increase User Score Var
-      //say User won in HTML 
+      userScore ++;
+      document.getElementById("userScore").innerHTML = userScore;
+      return document.getElementById("p1").innerHTML = "You suck just a tad bit less than the Computer!";
     }
     }
     
-  
+
   
   if (userChoice === 'paper') {
     if (computerChoice === 'scissors') {
-      return "Computer Wins";
+      computerScore++;
+      document.getElementById("computerScore").innerHTML = computerScore;
+      return document.getElementById("p1").innerHTML = "Wow, you're almost as bad as Mustafa!";
     } else {
-      return "You won!";
+      userScore++;
+      document.getElementById("userScore").innerHTML = userScore;
+      return document.getElementById("p1").innerHTML = "You suck just a tad bit less than the Computer!";
     }
     }
     
@@ -51,21 +57,32 @@ const getUserChoice = (userInput) => {
   
   if (userChoice === 'scissors') {
     if (computerChoice === 'rock') {
-      return "Computer Wins";
+      computerScore++;
+      document.getElementById("computerScore").innerHTML = computerScore;
+      return document.getElementById("p1").innerHTML = "Wow, you're almost as bad as Mustafa!";
     } else {
-      return "You won!";
+      userScore++;
+      document.getElementById("userScore").innerHTML = userScore;
+      return document.getElementById("p1").innerHTML = "You suck just a tad bit less than the Computer!";
     }
     }
-
     // HTML elements with the scores for users and Comp
   };
   
+
+
   const playGame = (choice) => {
     const userChoice = getUserChoice(choice)
     const computerChoice = getComputerChoice();
-    console.log('You chose ' + userChoice);
-    console.log('AI chose ' + computerChoice);
   
     console.log(determineWinner(userChoice, computerChoice));
   };
-  
+
+function resetGame () {
+    userScore = 0;
+    computerScore = 0;
+    result = "";
+  document.getElementById("userScore").innerHTML = userScore;
+  document.getElementById("computerScore").innerHTML = computerScore;
+  document.getElementById("result").innerHTML = result;
+}

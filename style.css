@@ -1,5 +1,43 @@
 .rps {
     border: 3px solid black;
     border-radius: 20px;
-    background-color: gray;
+    background-color: #94897B;
+    width: 20%;
+}
+body {
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.rps:hover {
+    background-color: #635C55;
+    transition: .5s;
+}
+.highlight {
+    background-color: #94897B;
+    border: 3px solid #635C55;
+    border-radius: 20px;
+    width: 35%;
+    margin: auto;
+}
+.highlight2 {
+    background-color: #cacaca;
+    border: 3px solid #2e2e2e;
+    border-radius: 20px;
+    width: 30%;
+    margin: auto;
+}
+.resethighlight {
+    background-color: rgb(238, 73, 73);
+    border: 3px solid black;
+    width: 10%;
+    margin: auto;
+    font-family: 'Tilt Neon', cursive;
+    text-align: center;
+    font-size: 35px;
+}
+.resethighlight:hover {
+    background-color: rgb(255, 0, 0);
+    transition: .5s;
 }
